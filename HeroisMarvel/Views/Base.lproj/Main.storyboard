@@ -71,6 +71,7 @@
                         <barButtonItem key="rightBarButtonItem" id="F37-aI-uHB"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="nameTextField" destination="ATS-7j-WzP" id="yAb-dz-qoF"/>
                         <segue destination="SSb-CY-Xvz" kind="show" id="Ona-lX-Bhs"/>
                     </connections>
                 </viewController>
@@ -78,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="128.57142857142856"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Heroes Table View Controller-->
         <scene sceneID="iU6-rg-LOt">
             <objects>
-                <tableViewController id="SSb-CY-Xvz" sceneMemberID="viewController">
+                <tableViewController id="SSb-CY-Xvz" customClass="HeroesTableViewController" customModule="HeroisMarvel" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="igi-2r-ZTh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -145,10 +146,10 @@
             </objects>
             <point key="canvasLocation" x="1921.7391304347827" y="130.58035714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Hero View Controller-->
         <scene sceneID="mpe-jH-Hw7">
             <objects>
-                <viewController id="xcc-7T-qNe" sceneMemberID="viewController">
+                <viewController id="xcc-7T-qNe" customClass="HeroViewController" customModule="HeroisMarvel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wh7-ai-oux">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -178,6 +179,10 @@
                         <viewLayoutGuide key="safeArea" id="Q5Z-SK-2WB"/>
                     </view>
                     <navigationItem key="navigationItem" id="nTy-jZ-n2c"/>
+                    <connections>
+                        <outlet property="loading" destination="S5F-gp-Ip7" id="qkK-UT-9So"/>
+                        <outlet property="webView" destination="Llf-be-33K" id="GJX-m3-hWL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcB-Td-BLT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
