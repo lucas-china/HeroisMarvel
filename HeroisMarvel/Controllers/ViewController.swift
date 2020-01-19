@@ -21,6 +21,15 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        nameTextField.resignFirstResponder()
+        guard let vc = segue.destination as? HeroesTableViewController else { return }
+        vc.name = nameTextField.text
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 }
 
