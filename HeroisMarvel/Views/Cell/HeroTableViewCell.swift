@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HeroTableViewCell: UITableViewCell {
 
@@ -29,6 +30,17 @@ class HeroTableViewCell: UITableViewCell {
     func prepareCell(with hero: MarvelHero) {
         nameLabel.text = hero.name
         descriptionLabel.text = hero.description
+        if let url = URL(string: hero.thumbnail.url) {
+            thubImageView.kf.indicatorType = .activity
+            thubImageView.kf.setImage(with: url)
+        } else {
+            thubImageView.image = nil
+        }
+        
+        thubImageView.layer.cornerRadius = thubImageView.frame.height/2
+        thubImageView.layer.borderColor = UIColor.red.cgColor
+        thubImageView.layer.borderWidth = 2
+        
     }
 
 }

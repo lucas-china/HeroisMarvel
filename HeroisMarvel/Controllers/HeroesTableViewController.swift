@@ -57,18 +57,18 @@ class HeroesTableViewController: UITableViewController {
 extension HeroesTableViewController {
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         tableView.backgroundView = heroes.count == 0 ? label : nil
         return heroes.count
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellHero = tableView.dequeueReusableCell(withIdentifier: "cell")
+        guard let cellHero = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? HeroTableViewCell else { return HeroTableViewCell() }
         
-        return cellHero!
+        let hero = heroes[indexPath.row]
+        
+        cellHero.prepareCell(with: hero)
+        
+        return cellHero
     }
 }

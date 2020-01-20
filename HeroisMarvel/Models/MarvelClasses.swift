@@ -33,13 +33,13 @@ struct MarvelHero: Codable {
 
 struct Thumbnail: Codable {
     let path: String
-    let ext: String?
+    let ext: String
     
     var url: String {
-        return path + "." + (ext ?? "jpg")
+        return path + "." + ext 
     }
     
-    enum CodinKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case path
         case ext = "extension"
     }
