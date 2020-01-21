@@ -85,7 +85,7 @@
         <scene sceneID="iU6-rg-LOt">
             <objects>
                 <tableViewController id="SSb-CY-Xvz" customClass="HeroesTableViewController" customModule="HeroisMarvel" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="igi-2r-ZTh">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="igi-2r-ZTh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -136,6 +136,7 @@
                                     <outlet property="descriptionLabel" destination="THI-vB-x5I" id="fAh-93-oth"/>
                                     <outlet property="nameLabel" destination="wFf-mw-XVQ" id="VM3-js-1qB"/>
                                     <outlet property="thubImageView" destination="8Le-6m-RZt" id="124-gR-qYx"/>
+                                    <segue destination="xcc-7T-qNe" kind="show" id="xY0-4X-p2f"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -145,9 +146,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Heróis Marvel" id="eWX-fn-qi9"/>
-                    <connections>
-                        <segue destination="xcc-7T-qNe" kind="show" id="hma-j5-TAX"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rW-KP-T0d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -169,7 +167,7 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="S5F-gp-Ip7">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="S5F-gp-Ip7">
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                                 <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>

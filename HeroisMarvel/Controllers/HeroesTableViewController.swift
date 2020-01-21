@@ -38,6 +38,12 @@ class HeroesTableViewController: UITableViewController {
         label.text = "Buscando heróis. Aguarde..."
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? HeroViewController else { return }
+        guard let index = tableView.indexPathForSelectedRow?.row else { return }
+        vc.hero = heroes[index]
+    }
+    
     private func loadHeroes() {
         loadingHeroes = true
         MarvelAPI.loadHeros(name: name, page: currentPage) { [weak self] (info) in
@@ -70,5 +76,12 @@ extension HeroesTableViewController {
         cellHero.prepareCell(with: hero)
         
         return cellHero
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == heroes.count - 10 && !loadingHeroes &&  heroes.count != total {
+            currentPage += 1
+            loadHeroes()
+        }
     }
 }
